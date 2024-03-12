@@ -14,10 +14,7 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+        child: Image(image: AssetImage('assets/images/home.png')),
       ),
     );
   }
