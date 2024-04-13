@@ -42,6 +42,8 @@ class HomeView extends GetView<HomeController> {
                 prefixIcon: Icon(Icons.search),
                 suffixIcon: Image.asset('assets/images/filter.png'),
                 hintText: 'Location',
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 2.0, horizontal: 5.0),
                 //border: InputBorder.none,
                 focusedBorder: OutlineInputBorder(
                   // Add focused border
@@ -59,6 +61,94 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                prefixIcon: Image.asset('assets/images/date.png'),
+
+                hintText: 'July 08 - July 15',
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 2.0, horizontal: 5.0),
+
+                //border: InputBorder.none,
+
+                focusedBorder: OutlineInputBorder(
+                  // Add focused border
+                  borderRadius: BorderRadius.circular(14.0),
+                  borderSide: BorderSide(
+                      color:
+                          Colors.transparent), // Set transparent border color
+                ),
+                enabledBorder: OutlineInputBorder(
+                  // Add enabled border
+                  borderRadius: BorderRadius.circular(14.0),
+                  borderSide: BorderSide(
+                      color:
+                          Colors.transparent), // Set transparent border color
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                prefixIcon: Image.asset('assets/images/people.png'),
+                suffixIcon: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.add),
+                    SizedBox(width: 20),
+                    Container(
+                      width: 1, // Width of the divider
+                      height: 24, // Height of the divider
+                      color: Colors.grey, // Color of the divider
+                    ),
+                    SizedBox(width: 20),
+                    Icon(Icons.remove)
+                  ],
+                ),
+
+                hintText: '2 Guests',
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 2.0, horizontal: 5.0),
+                //border: InputBorder.none,
+                focusedBorder: OutlineInputBorder(
+                  // Add focused border
+                  borderRadius: BorderRadius.circular(14.0),
+                  borderSide: BorderSide(
+                      color:
+                          Colors.transparent), // Set transparent border color
+                ),
+                enabledBorder: OutlineInputBorder(
+                  // Add enabled border
+                  borderRadius: BorderRadius.circular(14.0),
+                  borderSide: BorderSide(
+                      color:
+                          Colors.transparent), // Set transparent border color
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                        EdgeInsets.symmetric(horizontal: 70, vertical: 20)),
+                    textStyle: MaterialStateProperty.all<TextStyle>(
+                        const TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(AppColor.btnColor)),
+                child: const Text('Search'))
           ]),
         ),
       ),
