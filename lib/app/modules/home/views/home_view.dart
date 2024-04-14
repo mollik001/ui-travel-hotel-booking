@@ -159,28 +159,58 @@ class HomeView extends GetView<HomeController> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 20),
-                      child: Stack(children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Container(
-                            height: 200,
-                            width: 360,
-                            child: Image.asset(
-                              'assets/images/home.png',
-                              fit: BoxFit.cover,
+                        horizontal: 25,
+                        vertical: 20,
+                      ),
+                      child: Stack(
+                        children: [
+                          // Home image
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Container(
+                              height: 200,
+                              width: 360,
+                              child: Image.asset(
+                                'assets/images/home.png',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        Positioned(
+                          // Tag image
+                          Positioned(
                             bottom: 0,
                             right: 0,
                             child: ClipRRect(
-                                borderRadius: BorderRadius.only(
-                                    bottomRight: Radius.circular(30)),
-                                child: Image.asset('assets/images/tag.png')))
-                      ]),
-                    )
+                              borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(30),
+                              ),
+                              child: Image.asset(
+                                'assets/images/tag.png',
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Text
+                    Positioned(
+                      left: 28,
+                      right: 28,
+                      bottom: 40,
+                      child: Container(
+                        width: 310, // Adjust width as needed
+                        child: Text(
+                          'In the heart of Balis breathtaking beauty lies our tranquil hotel, a serene retreat amidst the islands lush landscapes. Surrounded by swaying palms and vibrant tropical gardens, our establishment offers a peaceful sanctuary for travelers seeking respite. ',
+                          maxLines: 3, // Limit the text to 3 lines
+                          overflow: TextOverflow
+                              .ellipsis, // Display ellipsis (...) when text overflows
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
