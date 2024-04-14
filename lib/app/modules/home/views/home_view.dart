@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
@@ -156,30 +157,30 @@ class HomeView extends GetView<HomeController> {
                 ),
                 child: Stack(
                   children: [
-                    // First image
-                    Positioned(
-                      left: 20,
-                      right: 20,
-                      top: 10,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(
-                            20), // Assuming 20 is the border radius of the first image
-                        child: Image.asset(
-                          'assets/images/home.png',
-                          fit: BoxFit.cover,
-                          width: 300, // Adjust width as needed
-                          height: 200, // Adjust height as needed
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 20),
+                      child: Stack(children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Container(
+                            height: 200,
+                            width: 360,
+                            child: Image.asset(
+                              'assets/images/home.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                    // Second image
-                    Positioned(
-                      bottom: 12,
-                      right: 20,
-                      child: Image.asset(
-                        'assets/images/tag.png',
-                      ),
-                    ),
+                        Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    bottomRight: Radius.circular(30)),
+                                child: Image.asset('assets/images/tag.png')))
+                      ]),
+                    )
                   ],
                 ),
               ),
