@@ -50,7 +50,7 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -154,9 +154,32 @@ class HomeView extends GetView<HomeController> {
                     topRight: Radius.circular(20),
                   ),
                 ),
-                child: const Stack(
+                child: Stack(
                   children: [
-                    // Add your stack children here
+                    // First image
+                    Positioned(
+                      left: 20,
+                      right: 20,
+                      top: 10,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(
+                            20), // Assuming 20 is the border radius of the first image
+                        child: Image.asset(
+                          'assets/images/home.png',
+                          fit: BoxFit.cover,
+                          width: 300, // Adjust width as needed
+                          height: 200, // Adjust height as needed
+                        ),
+                      ),
+                    ),
+                    // Second image
+                    Positioned(
+                      bottom: 12,
+                      right: 20,
+                      child: Image.asset(
+                        'assets/images/tag.png',
+                      ),
+                    ),
                   ],
                 ),
               ),
