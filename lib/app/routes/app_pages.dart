@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:travel_hotel_booking/app/modules/home/views/secondPage.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
@@ -13,7 +14,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => const SecondPage(),
       binding: HomeBinding(),
     ),
   ];
