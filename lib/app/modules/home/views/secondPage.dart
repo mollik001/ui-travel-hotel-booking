@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:travel_hotel_booking/app/modules/home/controllers/home_controller.dart';
+import 'package:travel_hotel_booking/app/theme/style.dart';
 
 class SecondPage extends GetView<HomeController> {
   const SecondPage({Key? key}) : super(key: key);
@@ -118,7 +119,7 @@ class SecondPage extends GetView<HomeController> {
             child: Container(
               height: 450, // Adjust the height as needed
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 247, 240, 240),
+                color: AppColor.bgConColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -127,25 +128,167 @@ class SecondPage extends GetView<HomeController> {
               child: Stack(
                 children: [
                   Positioned(
-                    top: 0,
-                    left: 0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    top: 10,
+                    left: 10,
+                    right: 10,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        TextButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                              const Color.fromARGB(255, 255, 255, 255),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment
+                              .spaceEvenly, // Align children to the end (right) of the row
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(
+                                  8.0), // Add padding around the button
+                              child: TextButton(
+                                onPressed: () {},
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    const Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                  overlayColor:
+                                      MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                                      if (states
+                                          .contains(MaterialState.pressed)) {
+                                        // Return the color when the button is pressed
+                                        return AppColor
+                                            .btnColor; // Adjust the opacity and color as needed
+                                      }
+                                      // Return null if there's no splash color
+                                      return AppColor.bgConColor;
+                                    },
+                                  ),
+                                  minimumSize: MaterialStateProperty.all<Size>(
+                                      Size(105, 20)),
+                                ),
+                                child: Text('Hotels'),
+                              ),
                             ),
-                            minimumSize:
-                                MaterialStateProperty.all<Size>(Size(105, 20)),
-                          ),
-                          child: Text('Hotels'),
+                            Padding(
+                              padding: const EdgeInsets.all(
+                                  8.0), // Add padding around the button
+                              child: TextButton(
+                                onPressed: () {},
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    const Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                  overlayColor:
+                                      MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                                      if (states
+                                          .contains(MaterialState.pressed)) {
+                                        // Return the color when the button is pressed
+                                        return AppColor
+                                            .btnColor; // Adjust the opacity and color as needed
+                                      }
+                                      // Return null if there's no splash color
+                                      return AppColor.bgConColor;
+                                    },
+                                  ),
+                                  minimumSize: MaterialStateProperty.all<Size>(
+                                      Size(105, 20)),
+                                ),
+                                child: Text('Foods'),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(
+                                  8.0), // Add padding around the button
+                              child: TextButton(
+                                onPressed: () {},
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    const Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                  overlayColor:
+                                      MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                                      if (states
+                                          .contains(MaterialState.pressed)) {
+                                        // Return the color when the button is pressed
+                                        return AppColor
+                                            .btnColor; // Adjust the opacity and color as needed
+                                      }
+                                      // Return null if there's no splash color
+                                      return AppColor.bgConColor;
+                                    },
+                                  ),
+                                  minimumSize: MaterialStateProperty.all<Size>(
+                                      Size(105, 20)),
+                                ),
+                                child: Text('Hotels'),
+                              ),
+                            ),
+                          ],
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              width: 160,
+                              height: 230,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  'assets/images/home.png',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Container(
+                              width: 160,
+                              height: 230,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: const DecorationImage(
+                                  image: AssetImage('assets/images/home.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              child: Stack(
+                                children: [
+                                  Positioned.fill(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Colors.black
+                                            .withOpacity(0.4), // Dark overlay
+                                      ),
+                                    ),
+                                  ),
+                                  const Center(
+                                    child: Text(
+                                      '10+',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
