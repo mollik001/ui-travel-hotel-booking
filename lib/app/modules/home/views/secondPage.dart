@@ -113,9 +113,10 @@ class SecondPage extends GetView<HomeController> {
           ),
           // Container below the image
           Positioned(
-            top: 325, // Adjust the position as needed
+            top: 310, // Adjust the position as needed
             left: 0,
             right: 0,
+            bottom: 0,
             child: Container(
               height: 450, // Adjust the height as needed
               decoration: const BoxDecoration(
@@ -133,6 +134,7 @@ class SecondPage extends GetView<HomeController> {
                     right: 10,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment
@@ -242,7 +244,7 @@ class SecondPage extends GetView<HomeController> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
                                 child: Image.asset(
-                                  'assets/images/home.png',
+                                  'assets/images/mp1.png',
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -256,7 +258,7 @@ class SecondPage extends GetView<HomeController> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/images/home.png'),
+                                  image: AssetImage('assets/images/mp2.png'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -267,7 +269,7 @@ class SecondPage extends GetView<HomeController> {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         color: Colors.black
-                                            .withOpacity(0.4), // Dark overlay
+                                            .withOpacity(0.1), // Dark overlay
                                       ),
                                     ),
                                   ),
@@ -285,6 +287,59 @@ class SecondPage extends GetView<HomeController> {
                               ),
                             ),
                           ],
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 10),
+                          child: Text(
+                            'DETAILS',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 10, right: 10),
+                          child: Text(
+                            'A very nice Vila that sooths your heart. The view of rice field just from the window. One can enjoy swimming around in our private lake. Come and enjoy many other facilities that you will remember for the rest of your life.',
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w300),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 110, vertical: 10),
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: const ButtonStyle(
+                                backgroundColor: MaterialStatePropertyAll(
+                                    AppColor.btnColor)),
+                            child: const Row(
+                              children: [
+                                Text(
+                                  'Continue',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Icon(
+                                  Icons.arrow_right_alt,
+                                  color: Colors.white,
+                                  size: 25,
+                                )
+                              ],
+                            ),
+                          ),
                         )
                       ],
                     ),
